@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: brad-hobbswd/anthony-blog-devotion
+  name: git-gateway
   branch: main
 
 media_folder: "images/uploads"
