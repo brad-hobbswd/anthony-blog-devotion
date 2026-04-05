@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ministry Blog</title>
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
@@ -21,18 +24,16 @@ nav {
   background: rgba(0,0,0,0.4);
 }
 
-/* LOGO STYLE */
+/* LOGO FONT STYLE */
 .logo {
-  font-size: 22px;
-  letter-spacing: 0.5px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
 }
 
 .name {
-  font-size: 28px;
-  font-weight: bold;
-  background: linear-gradient(to right, #c084fc, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  font-weight: 600;
+  color: #c084fc;
 }
 
 .rest {
@@ -238,6 +239,7 @@ footer {
 
 </div>
 
+<!-- POSTS SCRIPT -->
 <script>
 async function loadPosts() {
   const container = document.getElementById("posts");
