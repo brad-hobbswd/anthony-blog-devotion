@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ministry Blog</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #1e1b4b, #6d28d9);
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.4);
+}
+
+nav h1 {
+  margin: 0;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 38px;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+.posts {
+  flex: 2;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+/* POSTS */
+.post {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.post.newest {
+  border: 2px solid #c084fc;
+}
+
+.post h3 {
+  margin-top: 0;
+}
+
+.date {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+/* SIDEBAR */
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* IMAGE */
+.profile img {
+  width: 130px;
+  border-radius: 100%;
+  margin-top: 10px;
+}
+
+/* BUTTON */
+.button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #9333ea;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* VIDEO */
+iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <h1>Ministry</h1>
+</nav>
+
+<div class="hero">
+  <h2>Scripture • Devotion • Worship</h2>
+  <p>Lifting the name of Jesus</p>
+</div>
+
+<div class="container">
+
+  <!-- POSTS -->
+  <div class="posts">
+
+    <!-- NEWEST POST -->
+    <div class="post newest">
+      <h3>Jesus Still Restores</h3>
+      <p class="date">April 2026 • Devotion</p>
+      <p>Jesus restores what life tries to break. Grace reaches deeper than failure, and His name still brings healing and power today.</p>
+    </div>
+
+    <!-- POST -->
+    <div class="post">
+      <h3>Acts 2:38</h3>
+      <p class="date">Scripture</p>
+      <p>Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins...</p>
+    </div>
+
+    <!-- POST -->
+    <div class="post">
+      <h3>Worship in Spirit</h3>
+      <p class="date">Worship</p>
+      <p>True worship flows from a surrendered heart. Lift the name of Jesus and let worship become your lifestyle.</p>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- ABOUT -->
+    <div class="card profile">
+      <h3>About Me</h3>
+      <p>Sharing Scripture, devotion, and worship centered on Jesus.</p>
+
+      <!-- REPLACE IMAGE -->
+      <img src="your-image.jpg">
+
+      <br>
+
+      <a class="button" href="https://www.pentecostalsofwindsor.faith/" target="_blank">
+        Visit My Church
+      </a>
+    </div>
+
+    <!-- SCRIPTURE -->
+    <div class="card">
+      <h3>Scripture of the Day</h3>
+      <p>Acts 2:38</p>
+    </div>
+
+    <!-- WORSHIP VIDEO -->
+    <div class="card">
+      <h3>Worship</h3>
+
+      <!-- Replace VIDEO ID -->
+      <iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
