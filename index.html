@@ -25,10 +25,6 @@ nav {
   padding: 60px 20px;
 }
 
-.hero h2 {
-  font-size: 38px;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -107,7 +103,6 @@ a {
   }
 }
 </style>
-
 </head>
 
 <body>
@@ -123,10 +118,8 @@ a {
 
 <div class="container">
 
-  <!-- POSTS -->
   <div class="posts" id="posts"></div>
 
-  <!-- SIDEBAR -->
   <div class="sidebar">
 
     <div class="card profile">
@@ -160,18 +153,18 @@ a {
       </p>
 
       <p>
-        <strong>Bethesda Apostolic Pentecostal Bible Institute (BAPBI)</strong><br>
+        <strong>BAPBI</strong><br>
         <a href="https://www.bapbi.net" target="_blank">
           www.bapbi.net
         </a>
       </p>
+
     </div>
 
   </div>
 
 </div>
 
-<!-- LOAD POSTS -->
 <script>
 async function loadPosts() {
   const container = document.getElementById("posts");
@@ -187,15 +180,26 @@ async function loadPosts() {
         const raw = await fetch(file.download_url);
         const text = await raw.text();
 
-        const title = (text.match(/title:\s*"(.+)"/) || [])[1] || "No Title";
-        const date = (text.match(/date:\s*(.+)/) || [])[1] || "";
+        // SPLIT FRONTMATTER
+        const parts = text.split("---");
+        const frontmatter = parts[1];
+        const body = parts[2];
 
-        const rawContent = text.split("---")[2] || "";
-        const paragraphs = rawContent.trim().split(/\n\s*\n/);
+        // PARSE FRONTMATTER CLEANLY
+        const data = {};
+        frontmatter.split("\n").forEach(line => {
+          const [key, ...rest] = line.split(":");
+          if (key && rest.length) {
+            data[key.trim()] = rest.join(":").trim();
+          }
+        });
 
-        const content = paragraphs
-          .map(p => `<p>${p.trim()}</p>`)
-          .join("");
+        const title = data.title || "No Title";
+        const date = data.date || "";
+
+        // PARAGRAPH FORMAT
+        const paragraphs = body.trim().split(/\n\s*\n/);
+        const content = paragraphs.map(p => `<p>${p.trim()}</p>`).join("");
 
         posts.push({ title, date, content });
       }
@@ -224,7 +228,6 @@ async function loadPosts() {
 loadPosts();
 </script>
 
-<!-- NETLIFY IDENTITY -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 if (window.netlifyIdentity) {
