@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ministry Blog</title>
 
-<!-- GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   background: linear-gradient(to bottom, #1e1b4b, #6d28d9);
   color: white;
 }
@@ -20,20 +20,28 @@ body {
 nav {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
   padding: 15px;
   background: rgba(0,0,0,0.4);
 }
 
-/* LOGO FONT STYLE */
+/* LOGO ICON */
+.logo-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* LOGO TEXT */
 .logo {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 24px;
 }
 
 .name {
   font-size: 30px;
   font-weight: 600;
   color: #c084fc;
+  text-shadow: 0 0 10px rgba(192,132,252,0.6);
 }
 
 .rest {
@@ -50,7 +58,6 @@ nav {
 
 .hero h2 {
   font-size: 42px;
-  margin-bottom: 10px;
 }
 
 .hero p {
@@ -112,7 +119,6 @@ nav {
 .date {
   font-size: 12px;
   opacity: 0.7;
-  margin-bottom: 10px;
 }
 
 strong {
@@ -129,7 +135,7 @@ strong {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* IMAGE */
@@ -143,8 +149,6 @@ iframe {
   width: 100%;
   height: 200px;
   border-radius: 10px;
-  margin-top: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* LINKS */
@@ -176,6 +180,8 @@ footer {
 <body>
 
 <nav>
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" class="logo-icon">
+
   <h1 class="logo">
     <span class="name">Anthony’s</span>
     <span class="rest">Home Page in Devotion & Ministry</span>
@@ -190,7 +196,7 @@ footer {
 <div class="container">
 
   <div class="posts">
-    <h2 style="margin-bottom:10px;">Latest Devotions</h2>
+    <h2>Latest Devotions</h2>
     <div id="posts"></div>
   </div>
 
@@ -213,25 +219,18 @@ footer {
 
     <div class="card">
       <h3>Worship</h3>
-      <iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
+      <p style="font-size:13px; opacity:0.7;">Now Playing</p>
+      <iframe src="https://www.youtube.com/embed/REzub8autiY" allowfullscreen></iframe>
     </div>
 
     <div class="card">
       <h3>Ministry Connections</h3>
 
-      <p>
-        <strong>Bethesda Tabernacle</strong><br>
-        <a href="https://www.mercyforyou.org" target="_blank">
-          www.mercyforyou.org
-        </a>
-      </p>
+      <p><strong>Bethesda Tabernacle</strong><br>
+      <a href="https://www.mercyforyou.org" target="_blank">Visit Site</a></p>
 
-      <p>
-        <strong>BAPBI</strong><br>
-        <a href="https://www.bapbi.net" target="_blank">
-          www.bapbi.net
-        </a>
-      </p>
+      <p><strong>BAPBI</strong><br>
+      <a href="https://www.bapbi.net" target="_blank">Visit Site</a></p>
 
     </div>
 
@@ -239,7 +238,6 @@ footer {
 
 </div>
 
-<!-- POSTS SCRIPT -->
 <script>
 async function loadPosts() {
   const container = document.getElementById("posts");
@@ -272,13 +270,8 @@ async function loadPosts() {
 
         const paragraphs = body.trim().split(/\n\s*\n/);
 
-        const preview = paragraphs.slice(0, 2)
-          .map(p => `<p>${p.trim()}</p>`)
-          .join("");
-
-        const full = paragraphs
-          .map(p => `<p>${p.trim()}</p>`)
-          .join("");
+        const preview = paragraphs.slice(0, 2).map(p => `<p>${p}</p>`).join("");
+        const full = paragraphs.map(p => `<p>${p}</p>`).join("");
 
         posts.push({ title, date, preview, full });
       }
@@ -290,19 +283,13 @@ async function loadPosts() {
       const div = document.createElement("div");
       div.className = "post" + (index === 0 ? " newest" : "");
 
-      const postId = "post-" + index;
+      const id = "post-" + index;
 
       div.innerHTML = `
         <h3>${post.title}</h3>
         <p class="date">${post.date}</p>
-
-        <div id="${postId}">
-          ${post.preview}
-        </div>
-
-        <button class="button" onclick="togglePost('${postId}', this)">
-          Read More
-        </button>
+        <div id="${id}">${post.preview}</div>
+        <button class="button" onclick="togglePost('${id}', this)">Read More</button>
       `;
 
       div.dataset.full = post.full;
@@ -311,34 +298,25 @@ async function loadPosts() {
       container.appendChild(div);
     });
 
-  } catch (err) {
+  } catch {
     container.innerHTML = "<p>Posts could not load.</p>";
   }
 }
 
 function togglePost(id, btn) {
-  const container = document.getElementById(id);
+  const el = document.getElementById(id);
   const parent = btn.parentElement;
 
   if (btn.innerText === "Read More") {
-    container.innerHTML = parent.dataset.full;
+    el.innerHTML = parent.dataset.full;
     btn.innerText = "Show Less";
   } else {
-    container.innerHTML = parent.dataset.preview;
+    el.innerHTML = parent.dataset.preview;
     btn.innerText = "Read More";
   }
 }
 
 loadPosts();
-</script>
-
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("login", () => {
-    document.location.href = "/admin/";
-  });
-}
 </script>
 
 <footer>
