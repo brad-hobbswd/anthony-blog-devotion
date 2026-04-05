@@ -16,8 +16,8 @@ body {
 /* NAV */
 nav {
   display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
+  justify-content: center;
+  padding: 15px;
   background: rgba(0,0,0,0.4);
 }
 
@@ -33,6 +33,7 @@ nav h1 {
 
 .hero h2 {
   font-size: 38px;
+  margin-bottom: 10px;
 }
 
 /* LAYOUT */
@@ -67,6 +68,15 @@ nav h1 {
 
 .post h3 {
   margin-top: 0;
+  letter-spacing: 0.5px;
+}
+
+.post p {
+  line-height: 1.6;
+}
+
+.post strong {
+  color: #c084fc;
 }
 
 .date {
@@ -83,7 +93,7 @@ nav h1 {
   margin-bottom: 20px;
 }
 
-/* IMAGE */
+/* PROFILE IMAGE */
 .profile img {
   width: 130px;
   border-radius: 100%;
@@ -108,6 +118,13 @@ iframe {
   border-radius: 10px;
   margin-top: 10px;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
 </style>
 
 </head>
@@ -125,28 +142,38 @@ iframe {
 
 <div class="container">
 
-  <!-- POSTS -->
+  <!-- BLOG POSTS -->
   <div class="posts">
 
-    <!-- NEWEST POST -->
+    <!-- FEATURED POST -->
     <div class="post newest">
       <h3>Jesus Still Restores</h3>
       <p class="date">April 2026 • Devotion</p>
-      <p>Jesus restores what life tries to break. Grace reaches deeper than failure, and His name still brings healing and power today.</p>
+      <p><strong>Featured Devotion</strong></p>
+      <p>
+        Jesus restores what life tries to break. Grace reaches deeper than failure.
+        His name still heals, still saves, and still fills today.
+      </p>
     </div>
 
     <!-- POST -->
     <div class="post">
       <h3>Acts 2:38</h3>
       <p class="date">Scripture</p>
-      <p>Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins...</p>
+      <p>
+        Repent, and be baptized every one of you in the name of Jesus Christ
+        for the remission of sins, and ye shall receive the gift of the Holy Ghost.
+      </p>
     </div>
 
     <!-- POST -->
     <div class="post">
       <h3>Worship in Spirit</h3>
       <p class="date">Worship</p>
-      <p>True worship flows from a surrendered heart. Lift the name of Jesus and let worship become your lifestyle.</p>
+      <p>
+        Worship flows from surrender. Lift the name of Jesus and allow every moment
+        to become praise.
+      </p>
     </div>
 
   </div>
@@ -159,8 +186,7 @@ iframe {
       <h3>About Me</h3>
       <p>Sharing Scripture, devotion, and worship centered on Jesus.</p>
 
-      <!-- REPLACE IMAGE -->
-      <img src="0f37fee160b59ac8c6d0058bb3746ac1.jpeg">
+      <img src="0f37fee160b59ac8c6d0058bb3746ac1.jpeg" alt="Profile">
 
       <br>
 
@@ -172,16 +198,24 @@ iframe {
     <!-- SCRIPTURE -->
     <div class="card">
       <h3>Scripture of the Day</h3>
-      <p>Acts 2:38</p>
+      <p><strong>Acts 2:38</strong></p>
+      <p>
+        Be baptized in the name of Jesus Christ and receive the gift of the Holy Ghost.
+      </p>
     </div>
 
-    <!-- WORSHIP VIDEO -->
+    <!-- WORSHIP -->
     <div class="card">
       <h3>Worship</h3>
+      <iframe src="https://www.youtube.com/embed/VIDEOID" allowfullscreen></iframe>
+    </div>
 
-      <!-- Replace VIDEO ID -->
-      <iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
-
+    <!-- EXPLORE -->
+    <div class="card">
+      <h3>Explore</h3>
+      <p>Devotions</p>
+      <p>Scripture</p>
+      <p>Worship</p>
     </div>
 
   </div>
