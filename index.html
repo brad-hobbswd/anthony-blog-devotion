@@ -57,6 +57,11 @@ nav {
   border: 2px solid #c084fc;
 }
 
+.post p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
 .date {
   font-size: 12px;
   opacity: 0.7;
@@ -186,7 +191,11 @@ async function loadPosts() {
         const date = (text.match(/date:\s*(.+)/) || [])[1] || "";
 
         const rawContent = text.split("---")[2] || "";
-        const content = rawContent.trim().replace(/\n/g, "<br><br>");
+        const paragraphs = rawContent.trim().split(/\n\s*\n/);
+
+        const content = paragraphs
+          .map(p => `<p>${p.trim()}</p>`)
+          .join("");
 
         posts.push({ title, date, content });
       }
@@ -201,7 +210,7 @@ async function loadPosts() {
       div.innerHTML = `
         <h3>${post.title}</h3>
         <p class="date">${post.date}</p>
-        <p>${post.content}</p>
+        ${post.content}
       `;
 
       container.appendChild(div);
