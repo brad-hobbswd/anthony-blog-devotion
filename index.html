@@ -21,6 +21,25 @@ nav {
   background: rgba(0,0,0,0.4);
 }
 
+/* LOGO STYLE */
+.logo {
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(to right, #c084fc, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rest {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
 /* HERO */
 .hero {
   text-align: center;
@@ -71,7 +90,7 @@ nav {
   transform: translateY(-5px);
 }
 
-/* NEWEST POST */
+/* NEWEST */
 .post.newest {
   border: 2px solid #c084fc;
   box-shadow: 0 0 15px rgba(192,132,252,0.3);
@@ -156,7 +175,10 @@ footer {
 <body>
 
 <nav>
-  <h1>Anthony's Home Page in Devotion & Ministry</h1>
+  <h1 class="logo">
+    <span class="name">Anthony’s</span>
+    <span class="rest">Home Page in Devotion & Ministry</span>
+  </h1>
 </nav>
 
 <div class="hero">
@@ -166,13 +188,11 @@ footer {
 
 <div class="container">
 
-  <!-- POSTS -->
   <div class="posts">
     <h2 style="margin-bottom:10px;">Latest Devotions</h2>
     <div id="posts"></div>
   </div>
 
-  <!-- SIDEBAR -->
   <div class="sidebar">
 
     <div class="card profile">
@@ -218,7 +238,6 @@ footer {
 
 </div>
 
-<!-- POSTS SCRIPT -->
 <script>
 async function loadPosts() {
   const container = document.getElementById("posts");
@@ -311,7 +330,6 @@ function togglePost(id, btn) {
 loadPosts();
 </script>
 
-<!-- NETLIFY -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 if (window.netlifyIdentity) {
@@ -321,7 +339,6 @@ if (window.netlifyIdentity) {
 }
 </script>
 
-<!-- FOOTER -->
 <footer>
   © 2026 Brad Hobbs Web Design. All rights reserved.
 </footer>
