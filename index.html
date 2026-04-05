@@ -60,6 +60,7 @@ nav {
 .date {
   font-size: 12px;
   opacity: 0.7;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -117,13 +118,12 @@ a {
 
 <div class="container">
 
-  <!-- POSTS LOAD HERE -->
+  <!-- POSTS -->
   <div class="posts" id="posts"></div>
 
   <!-- SIDEBAR -->
   <div class="sidebar">
 
-    <!-- ABOUT -->
     <div class="card profile">
       <h3>About Me</h3>
       <p>Sharing Scripture, devotion, and worship centered on Jesus.</p>
@@ -134,19 +134,16 @@ a {
       </a>
     </div>
 
-    <!-- SCRIPTURE -->
     <div class="card">
       <h3>Scripture of the Day</h3>
       <p><strong>Acts 2:38</strong></p>
     </div>
 
-    <!-- WORSHIP -->
     <div class="card">
       <h3>Worship</h3>
       <iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
     </div>
 
-    <!-- MINISTRY LINKS -->
     <div class="card">
       <h3>Ministry Connections</h3>
 
@@ -187,7 +184,9 @@ async function loadPosts() {
 
         const title = (text.match(/title:\s*"(.+)"/) || [])[1] || "No Title";
         const date = (text.match(/date:\s*(.+)/) || [])[1] || "";
-        const content = text.split("---")[2] || "";
+
+        const rawContent = text.split("---")[2] || "";
+        const content = rawContent.trim().replace(/\n/g, "<br><br>");
 
         posts.push({ title, date, content });
       }
