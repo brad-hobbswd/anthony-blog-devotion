@@ -98,6 +98,15 @@ a {
   text-decoration: none;
 }
 
+footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 12px;
+  opacity: 0.7;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 40px;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -120,10 +129,8 @@ a {
 
 <div class="container">
 
-  <!-- POSTS -->
   <div class="posts" id="posts"></div>
 
-  <!-- SIDEBAR -->
   <div class="sidebar">
 
     <div class="card profile">
@@ -162,6 +169,7 @@ a {
           www.bapbi.net
         </a>
       </p>
+
     </div>
 
   </div>
@@ -270,6 +278,11 @@ if (window.netlifyIdentity) {
   });
 }
 </script>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Brad Hobbs Web Design. All rights reserved.
+</footer>
 
 </body>
 </html>
