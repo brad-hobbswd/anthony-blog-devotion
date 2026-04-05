@@ -57,10 +57,6 @@ nav {
   border: 2px solid #c084fc;
 }
 
-.post h3 {
-  margin-top: 0;
-}
-
 .date {
   font-size: 12px;
   opacity: 0.7;
@@ -94,6 +90,11 @@ iframe {
   border-radius: 10px;
 }
 
+a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -116,12 +117,13 @@ iframe {
 
 <div class="container">
 
-  <!-- AUTO POSTS LOAD HERE -->
+  <!-- POSTS LOAD HERE -->
   <div class="posts" id="posts"></div>
 
   <!-- SIDEBAR -->
   <div class="sidebar">
 
+    <!-- ABOUT -->
     <div class="card profile">
       <h3>About Me</h3>
       <p>Sharing Scripture, devotion, and worship centered on Jesus.</p>
@@ -132,21 +134,42 @@ iframe {
       </a>
     </div>
 
+    <!-- SCRIPTURE -->
     <div class="card">
       <h3>Scripture of the Day</h3>
       <p><strong>Acts 2:38</strong></p>
     </div>
 
+    <!-- WORSHIP -->
     <div class="card">
       <h3>Worship</h3>
       <iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
+    </div>
+
+    <!-- MINISTRY LINKS -->
+    <div class="card">
+      <h3>Ministry Connections</h3>
+
+      <p>
+        <strong>Bethesda Tabernacle</strong><br>
+        <a href="https://www.mercyforyou.org" target="_blank">
+          www.mercyforyou.org
+        </a>
+      </p>
+
+      <p>
+        <strong>Bethesda Apostolic Pentecostal Bible Institute (BAPBI)</strong><br>
+        <a href="https://www.bapbi.net" target="_blank">
+          www.bapbi.net
+        </a>
+      </p>
     </div>
 
   </div>
 
 </div>
 
-<!-- LOAD POSTS SCRIPT -->
+<!-- LOAD POSTS -->
 <script>
 async function loadPosts() {
   const container = document.getElementById("posts");
