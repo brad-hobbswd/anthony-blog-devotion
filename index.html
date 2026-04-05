@@ -13,7 +13,6 @@ body {
   color: white;
 }
 
-/* NAV */
 nav {
   display: flex;
   justify-content: center;
@@ -21,11 +20,6 @@ nav {
   background: rgba(0,0,0,0.4);
 }
 
-nav h1 {
-  margin: 0;
-}
-
-/* HERO */
 .hero {
   text-align: center;
   padding: 60px 20px;
@@ -33,10 +27,8 @@ nav h1 {
 
 .hero h2 {
   font-size: 38px;
-  margin-bottom: 10px;
 }
 
-/* LAYOUT */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -54,7 +46,6 @@ nav h1 {
   flex: 1;
 }
 
-/* POSTS */
 .post {
   background: rgba(255,255,255,0.1);
   padding: 25px;
@@ -68,24 +59,13 @@ nav h1 {
 
 .post h3 {
   margin-top: 0;
-  letter-spacing: 0.5px;
-}
-
-.post p {
-  line-height: 1.6;
-}
-
-.post strong {
-  color: #c084fc;
 }
 
 .date {
   font-size: 12px;
   opacity: 0.7;
-  margin-bottom: 10px;
 }
 
-/* SIDEBAR */
 .card {
   background: rgba(255,255,255,0.1);
   padding: 20px;
@@ -93,14 +73,11 @@ nav h1 {
   margin-bottom: 20px;
 }
 
-/* PROFILE IMAGE */
 .profile img {
   width: 130px;
   border-radius: 100%;
-  margin-top: 10px;
 }
 
-/* BUTTON */
 .button {
   display: inline-block;
   margin-top: 10px;
@@ -111,15 +88,12 @@ nav h1 {
   border-radius: 6px;
 }
 
-/* VIDEO */
 iframe {
   width: 100%;
   height: 200px;
   border-radius: 10px;
-  margin-top: 10px;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -142,98 +116,91 @@ iframe {
 
 <div class="container">
 
-  <!-- BLOG POSTS -->
-  <div class="posts">
-
-    <!-- FEATURED POST -->
-    <div class="post newest">
-      <h3>Jesus Still Restores</h3>
-      <p class="date">April 2026 • Devotion</p>
-      <p><strong>Featured Devotion</strong></p>
-      <p>
-        Jesus restores what life tries to break. Grace reaches deeper than failure.
-        His name still heals, still saves, and still fills today.
-      </p>
-    </div>
-
-    <!-- POST -->
-    <div class="post">
-      <h3>Acts 2:38</h3>
-      <p class="date">Scripture</p>
-      <p>
-        Repent, and be baptized every one of you in the name of Jesus Christ
-        for the remission of sins, and ye shall receive the gift of the Holy Ghost.
-      </p>
-    </div>
-
-    <!-- POST -->
-    <div class="post">
-      <h3>Worship in Spirit</h3>
-      <p class="date">Worship</p>
-      <p>
-        Worship flows from surrender. Lift the name of Jesus and allow every moment
-        to become praise.
-      </p>
-    </div>
-
-  </div>
+  <!-- AUTO POSTS LOAD HERE -->
+  <div class="posts" id="posts"></div>
 
   <!-- SIDEBAR -->
   <div class="sidebar">
 
-    <!-- ABOUT -->
     <div class="card profile">
       <h3>About Me</h3>
       <p>Sharing Scripture, devotion, and worship centered on Jesus.</p>
-
-      <img src="0f37fee160b59ac8c6d0058bb3746ac1.jpeg" alt="Profile">
-
+      <img src="0f37fee160b59ac8c6d0058bb3746ac1.jpeg">
       <br>
-
       <a class="button" href="https://www.pentecostalsofwindsor.faith/" target="_blank">
         Visit My Church
       </a>
     </div>
 
-    <!-- SCRIPTURE -->
     <div class="card">
       <h3>Scripture of the Day</h3>
       <p><strong>Acts 2:38</strong></p>
-      <p>
-        Be baptized in the name of Jesus Christ and receive the gift of the Holy Ghost.
-      </p>
     </div>
 
-    <!-- WORSHIP -->
     <div class="card">
       <h3>Worship</h3>
-      <iframe src="https://www.youtube.com/embed/VIDEOID" allowfullscreen></iframe>
-    </div>
-
-    <!-- EXPLORE -->
-    <div class="card">
-      <h3>Explore</h3>
-      <p>Devotions</p>
-      <p>Scripture</p>
-      <p>Worship</p>
+      <iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
     </div>
 
   </div>
 
 </div>
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
+<!-- LOAD POSTS SCRIPT -->
 <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
+async function loadPosts() {
+  const container = document.getElementById("posts");
+
+  try {
+    const res = await fetch("https://api.github.com/repos/brad-hobbswd/anthony-blog-devotion/contents/_posts");
+    const files = await res.json();
+
+    const posts = [];
+
+    for (const file of files) {
+      if (file.name.endsWith(".md")) {
+        const raw = await fetch(file.download_url);
+        const text = await raw.text();
+
+        const title = (text.match(/title:\s*"(.+)"/) || [])[1] || "No Title";
+        const date = (text.match(/date:\s*(.+)/) || [])[1] || "";
+        const content = text.split("---")[2] || "";
+
+        posts.push({ title, date, content });
       }
+    }
+
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    posts.forEach((post, index) => {
+      const div = document.createElement("div");
+      div.className = "post" + (index === 0 ? " newest" : "");
+
+      div.innerHTML = `
+        <h3>${post.title}</h3>
+        <p class="date">${post.date}</p>
+        <p>${post.content}</p>
+      `;
+
+      container.appendChild(div);
     });
+
+  } catch (err) {
+    container.innerHTML = "<p>Posts could not load.</p>";
   }
+}
+
+loadPosts();
+</script>
+
+<!-- NETLIFY IDENTITY -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("login", () => {
+    document.location.href = "/admin/";
+  });
+}
 </script>
 
 </body>
