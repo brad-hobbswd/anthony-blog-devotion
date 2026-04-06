@@ -3,61 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ministry Blog</title>
 
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+<title>Anthony's Devotion & Ministry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: Inter, sans-serif;
   background: linear-gradient(to bottom, #1e1b4b, #6d28d9);
   color: white;
 }
 
-/* NAV */
 nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 15px;
+  text-align: center;
+  padding: 20px;
   background: rgba(0,0,0,0.4);
 }
 
-/* LOGO */
-.logo-icon {
-  width: 30px;
+nav h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
 }
 
-.logo {
-  font-family: 'Playfair Display', serif;
-}
-
-.name {
-  font-size: 30px;
+nav span {
   color: #c084fc;
-  text-shadow: 0 0 10px rgba(192,132,252,0.6);
+  text-shadow: 0 0 10px rgba(192,132,252,0.8);
 }
 
-.rest {
-  font-size: 18px;
-  opacity: 0.85;
-}
-
-/* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, rgba(30,27,75,0.9), rgba(109,40,217,0.9));
+  padding: 50px 20px;
 }
 
-.hero h2 {
-  font-size: 42px;
-}
-
-/* LAYOUT */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -70,88 +49,77 @@ nav {
 .posts { flex: 2; }
 .sidebar { flex: 1; }
 
-/* CARDS */
-.post, .card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.1);
+.post {
+  background: rgba(255,255,255,0.1);
   padding: 25px;
   border-radius: 12px;
   margin-bottom: 25px;
-  transition: 0.3s;
 }
 
-.post:hover, .card:hover {
-  transform: translateY(-5px);
-}
-
-.post.newest {
-  border: 2px solid #c084fc;
-}
-
-/* TEXT */
 .post h3 {
-  font-size: 22px;
+  font-family: "Playfair Display", serif;
 }
 
-.post p {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 16px;
-  line-height: 1.9;
+.post-content p {
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
-/* PRAYER */
-.prayer-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
+.post-content h4 {
+  font-family: "Playfair Display", serif;
   margin-top: 20px;
   color: #c084fc;
 }
 
-.prayer-box {
-  background: rgba(255,255,255,0.1);
-  padding: 15px;
-  border-left: 3px solid #c084fc;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-/* BUTTON */
 .button {
-  padding: 10px 18px;
-  background: linear-gradient(to right, #9333ea, #7c3aed);
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #9333ea;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-/* MEDIA */
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  width: 130px;
+  border-radius: 100%;
+}
+
 iframe {
   width: 100%;
   height: 200px;
   border-radius: 10px;
 }
 
-/* FOOTER */
+a {
+  color: #c084fc;
+}
+
 footer {
   text-align: center;
   padding: 25px;
   font-size: 12px;
   opacity: 0.7;
 }
-</style>
 
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-  <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" class="logo-icon">
-  <h1 class="logo">
-    <span class="name">Anthony’s</span>
-    <span class="rest">Home Page in Devotion & Ministry</span>
-  </h1>
+  <h1><span>Anthony's</span> Devotion & Ministry</h1>
 </nav>
 
 <div class="hero">
@@ -160,92 +128,101 @@ footer {
 
 <div class="container">
 
+<!-- POSTS -->
 <div class="posts">
-  <h2>Latest Devotions</h2>
-  <div id="posts"></div>
+
+<div class="post">
+<h3>A New Life of True Freedom</h3>
+
+<div class="post-content" id="p1">
+
+<p>One of the deepest desires of the human heart is to truly know God.</p>
+
+<p>Paul expresses this longing in Philippians 3:10. He desired not just knowledge about Christ, but a real encounter with Him.</p>
+
 </div>
 
+<button class="button" onclick="toggle('p1', this)">Read More</button>
+
+<div class="full-content" style="display:none">
+
+<p>Jesus speaks of true freedom in John 8:36. Freedom is not doing whatever we want. True freedom is found in Him.</p>
+
+<p>Proverbs 14:12 reminds us that what seems right can lead to destruction.</p>
+
+<p>Romans 3:4 declares that God remains true regardless of human opinion.</p>
+
+<p>Galatians 3:27 reveals that we put on Christ and become new.</p>
+
+<p>Romans 6:1 shows that grace leads to transformation, not continued sin.</p>
+
+<p>2 Corinthians 5:17 declares that we are made new.</p>
+
+<h4>Prayer</h4>
+
+<p>Lord Jesus, help me know You deeply. Teach me to walk in Your truth and live as a new creation. Amen.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SIDEBAR -->
 <div class="sidebar">
 
-  <div class="card">
-    <h3>Worship</h3>
-    <iframe src="https://www.youtube.com/embed/REzub8autiY"></iframe>
-  </div>
+<div class="card profile">
+<h3>About Me</h3>
+<p>Sharing Scripture and devotion centered on Jesus.</p>
+<img src="0f37fee160b59ac8c6d0058bb3746ac1.jpeg">
+</div>
+
+<div class="card">
+<h3>Worship</h3>
+<iframe src="https://www.youtube.com/embed/REzub8autiY"></iframe>
+</div>
+
+<div class="card">
+<h3>Ministry Connections</h3>
+
+<p>
+<strong>Bethesda Tabernacle</strong><br>
+<a href="https://www.mercyforyou.org" target="_blank">
+www.mercyforyou.org
+</a>
+</p>
+
+<p>
+<strong>BAPBI</strong><br>
+<a href="https://www.bapbi.net" target="_blank">
+www.bapbi.net
+</a>
+</p>
 
 </div>
 
 </div>
 
-<script>
-async function loadPosts() {
-  const container = document.getElementById("posts");
-
-  const res = await fetch("https://api.github.com/repos/brad-hobbswd/anthony-blog-devotion/contents/_posts");
-  const files = await res.json();
-
-  for (const file of files) {
-    if (!file.name.endsWith(".md")) continue;
-
-    const raw = await fetch(file.download_url);
-    const text = await raw.text();
-
-    const parts = text.split("---");
-    const front = parts[1];
-    const body = parts[2];
-
-    const title = (front.match(/title:\s*(.+)/) || [])[1] || "No Title";
-
-    const paragraphs = body.trim().split(/\n\s*\n/);
-
-    const formatted = paragraphs.map(p => {
-      if (p.trim().toLowerCase() === "prayer") {
-        return `<div class="prayer-title">Prayer</div>`;
-      }
-      if (p.toLowerCase().startsWith("lord")) {
-        return `<div class="prayer-box"><p>${p}</p></div>`;
-      }
-      return `<p>${p}</p>`;
-    }).join("");
-
-    const preview = paragraphs.slice(0,2).map(p => `<p>${p}</p>`).join("");
-
-    const div = document.createElement("div");
-    div.className = "post";
-
-    const id = "post-" + Math.random();
-
-    div.innerHTML = `
-      <h3>${title}</h3>
-      <div id="${id}">${preview}</div>
-      <button class="button" onclick="toggle('${id}', this)">Read More</button>
-    `;
-
-    div.dataset.full = formatted;
-    div.dataset.preview = preview;
-
-    container.appendChild(div);
-  }
-}
-
-function toggle(id, btn){
-  const el = document.getElementById(id);
-  const parent = btn.parentElement;
-
-  if(btn.innerText === "Read More"){
-    el.innerHTML = parent.dataset.full;
-    btn.innerText = "Show Less";
-  } else {
-    el.innerHTML = parent.dataset.preview;
-    btn.innerText = "Read More";
-  }
-}
-
-loadPosts();
-</script>
+</div>
 
 <footer>
 © 2026 Brad Hobbs Web Design
 </footer>
+
+<script>
+function toggle(id, btn) {
+  const post = document.getElementById(id);
+  const full = post.nextElementSibling.nextElementSibling;
+
+  if (full.style.display === "none") {
+    full.style.display = "block";
+    btn.innerText = "Show Less";
+  } else {
+    full.style.display = "none";
+    btn.innerText = "Read More";
+  }
+}
+</script>
 
 </body>
 </html>
