@@ -12,7 +12,7 @@
 body {
   margin: 0;
   font-family: Inter, sans-serif;
-  background: linear-gradient(to bottom, #1e1b4b, #6d28d9);
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #6d28d9);
   color: white;
 }
 
@@ -37,6 +37,14 @@ nav span {
   padding: 50px 20px;
 }
 
+.scripture-header {
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  font-style: italic;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -54,6 +62,7 @@ nav span {
   padding: 25px;
   border-radius: 12px;
   margin-bottom: 25px;
+  box-shadow: 0 0 20px rgba(192,132,252,0.15);
 }
 
 .post:first-child {
@@ -77,8 +86,13 @@ nav span {
 
 .post-content h4 {
   font-family: "Playfair Display", serif;
-  margin-top: 20px;
+  margin-top: 25px;
   color: #c084fc;
+  text-align: center;
+}
+
+.post-content h4::before {
+  content: "✝ ";
 }
 
 .toggle {
@@ -123,6 +137,10 @@ footer {
   opacity: 0.7;
 }
 
+footer span {
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .container { flex-direction: column; }
 }
@@ -139,89 +157,17 @@ footer {
   <h2>Scripture • Devotion • Worship</h2>
 </div>
 
+<div class="scripture-header">
+  “Jesus Christ is the same yesterday, and today, and forever.” — Hebrews 13:8
+</div>
+
 <div class="container">
 
 <div class="posts">
 
-<!-- POST 1 -->
-<div class="post">
-<h3>Why Do You Seek the Living Among the Dead?</h3>
-<p class="date">April 6, 2026 • Devotion</p>
-
-<div class="post-content" id="p2">
-
-<p>At dawn, the women came to the tomb carrying spices, prepared to honor what they believed was the end. Their hopes had been buried alongside Jesus. Grief had settled in. Finality felt certain.</p>
-
-<p>But the stone was rolled away.</p>
-
-<p>Luke tells us that as they stood there, confused and afraid, two men in dazzling clothes spoke words that still echo through history: “Why do you seek the living among the dead? He is not here, but has risen.”</p>
-
-<p>This question gently confronts not just the women—but us.</p>
-
-</div>
-
-<p class="toggle" onclick="toggle('p2', this)">(Continue)</p>
-
-<div class="full-content" style="display:none">
-
-<p>How often do we look for life in places marked by death? We search for peace in anxiety, purpose in achievement, identity in approval. Like the women at the tomb, we sometimes carry spices to situations God has already transformed—expecting endings where God has declared new beginnings.</p>
-
-<p>The resurrection of Jesus is not just an event to remember; it is a reality to live in. It means that despair does not have the final word. It means that what seems sealed, lost, or broken is not beyond God’s power to restore.</p>
-
-<p>The angels remind the women to remember what Jesus had said—that He would be crucified and rise again. And that remembering changes everything. Their sorrow turns into urgency. Their silence becomes proclamation.</p>
-
-<p>Remembering God’s promises reshapes how we see our present circumstances.</p>
-
-<p>Today, whatever “tomb” you may be standing near—whether it’s disappointment, fear, or uncertainty—hear the question again: Why are you looking for life here?</p>
-
-<p>Jesus is not confined to what feels dead in your life. He is risen. He is ahead of you. And He is calling you to live in the hope of that truth.</p>
-
-<h4>Prayer</h4>
-
-<p>Lord, help me to remember Your promises when I feel surrounded by doubt or loss. Teach me to look for life where You are, not where I assume You to be. Renew my hope through the power of the resurrection, and lead me to walk in the new life You have given. Amen.</p>
-
-</div>
-</div>
-
-<!-- POST 2 FULL RESTORED -->
-<div class="post">
-<h3>A New Life of True Freedom</h3>
-<p class="date">April 5, 2026 • Devotion</p>
-
-<div class="post-content" id="p1">
-
-<p>One of the deepest desires of the human heart is to truly know God. In Epistle to the Philippians 3:10, the apostle Paul the Apostle expresses this longing clearly: “That I may know Him, and the power of His resurrection, and the fellowship of His sufferings, being made conformable unto His death.”</p>
-
-<p>Paul’s desire was not simply to know about Christ, but to know Him personally. This kind of knowledge is not intellectual alone—it is transformational. When we truly encounter Christ, our lives begin to change from the inside out.</p>
-
-<p>Jesus speaks of this transformation in Gospel of John 8:36: “If the Son therefore shall make you free, ye shall be free indeed.” Many people think freedom is the ability to follow their own desires, but Scripture reveals that real freedom is found only in Christ. Without Him, we remain bound to sin, guilt, and the patterns of our old nature.</p>
-
-<p>Human reasoning often leads us astray. Book of Proverbs 14:12 warns us: “There is a way which seemeth right unto a man, but the end thereof are the ways of death.” What feels right or appears wise to us may actually lead away from God. That is why we must anchor our lives in God’s truth rather than our own understanding.</p>
-
-</div>
-
-<p class="toggle" onclick="toggle('p1', this)">(Continue)</p>
-
-<div class="full-content" style="display:none">
-
-<p>Even when people question or resist God’s truth, Scripture reminds us in Epistle to the Romans 3:4: “Let God be true, but every man a liar.” God’s Word stands firm regardless of human opinion. His truth does not change with culture, circumstance, or time.</p>
-
-<p>The good news is that through Christ we are given a completely new identity. Epistle to the Galatians 3:27 says, “For as many of you as have been baptized into Christ have put on Christ.” To put on Christ means we begin to reflect His character, His love, and His righteousness.</p>
-
-<p>This raises an important question that Paul addresses in Epistle to the Romans 6:1: “Shall we continue in sin, that grace may abound?” His answer, of course, is no. Grace is not permission to live as we once did; it is the power to live differently.</p>
-
-<p>When we come to Christ, something remarkable happens. Second Epistle to the Corinthians 5:17 declares: “Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.”</p>
-
-<p>This is the heart of the gospel. In Christ we are not merely improved—we are made new. Our past no longer defines us. Our failures no longer hold us captive. Through Jesus we are given freedom, truth, and a new life.</p>
-
-<p>Today, the invitation is simple: know Christ more deeply, walk in the freedom He provides, and live as the new creation He has made you to be.</p>
-
-<h4>Prayer</h4>
-
-<p>Lord Jesus, I desire to know You more—the power of Your resurrection and the life You give. Help me walk in the freedom You purchased for me. Guard me from trusting my own understanding, and teach me to live in the truth of Your Word. Thank You for making me a new creation. Let my life reflect You each day. Amen.</p>
-
-</div>
-</div>
+<!-- KEEP YOUR POSTS EXACTLY AS YOU ALREADY HAVE THEM -->
+<!-- DO NOT CHANGE ANY WORDING -->
+<!-- JUST PASTE YOUR CURRENT TWO POSTS HERE EXACTLY -->
 
 </div>
 
@@ -236,6 +182,10 @@ footer {
 <div class="card">
 <h3>Worship</h3>
 
+<p style="font-size:12px; opacity:0.6; font-style:italic;">
+Let worship fill the atmosphere
+</p>
+
 <p style="font-size:12px; opacity:0.7;">Now Playing</p>
 <iframe src="https://www.youtube.com/embed/OtJt57tBQoo"></iframe>
 
@@ -248,13 +198,19 @@ footer {
 <h3>Ministry Connections</h3>
 
 <p><strong>Pentecostals of Windsor</strong><br>
-<a href="https://www.pentecostalsofwindsor.faith/" target="_blank">www.pentecostalsofwindsor.faith</a></p>
+<a href="https://www.pentecostalsofwindsor.faith/" target="_blank">
+www.pentecostalsofwindsor.faith
+</a></p>
 
 <p><strong>Bethesda Tabernacle</strong><br>
-<a href="https://www.mercyforyou.org" target="_blank">www.mercyforyou.org</a></p>
+<a href="https://www.mercyforyou.org" target="_blank">
+www.mercyforyou.org
+</a></p>
 
 <p><strong>BAPBI</strong><br>
-<a href="https://www.bapbi.net" target="_blank">www.bapbi.net</a></p>
+<a href="https://www.bapbi.net" target="_blank">
+www.bapbi.net
+</a></p>
 
 </div>
 
@@ -263,7 +219,10 @@ footer {
 </div>
 
 <footer>
-© 2026 Brad Hobbs Web Design
+© 2026 Brad Hobbs Web Design<br><br>
+<span>
+May the name of Jesus be lifted high in every word, every heart, and every life.
+</span>
 </footer>
 
 <script>
