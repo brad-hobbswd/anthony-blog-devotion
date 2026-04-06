@@ -56,12 +56,12 @@ nav span {
   margin-bottom: 25px;
 }
 
-/* NEWEST POST HIGHLIGHT */
+/* NEWEST */
 .post:first-child {
   border: 2px solid #c084fc;
 }
 
-/* DATE STYLE */
+/* DATE */
 .date {
   font-size: 12px;
   opacity: 0.7;
@@ -83,14 +83,16 @@ nav span {
   color: #c084fc;
 }
 
-.button {
+/* TOGGLE TEXT */
+.toggle {
   margin-top: 10px;
-  padding: 8px 15px;
-  background: #9333ea;
-  color: white;
-  border: none;
-  border-radius: 6px;
+  font-size: 13px;
+  opacity: 0.7;
   cursor: pointer;
+}
+
+.toggle:hover {
+  opacity: 1;
 }
 
 .card {
@@ -160,7 +162,7 @@ footer {
 
 </div>
 
-<button class="button" onclick="toggle('p2', this)">Read More</button>
+<p class="toggle" onclick="toggle('p2', this)">(Continue)</p>
 
 <div class="full-content" style="display:none">
 
@@ -183,7 +185,7 @@ footer {
 </div>
 </div>
 
-<!-- SECOND POST -->
+<!-- SECOND POST (FIXED PREVIEW) -->
 <div class="post">
 <h3>A New Life of True Freedom</h3>
 <p class="date">April 5, 2026 • Devotion</p>
@@ -194,15 +196,15 @@ footer {
 
 <p>Paul expresses this longing in Philippians 3:10. He desired not just knowledge about Christ, but a real encounter with Him.</p>
 
-</div>
-
-<button class="button" onclick="toggle('p1', this)">Read More</button>
-
-<div class="full-content" style="display:none">
-
 <p>Jesus speaks of true freedom in John 8:36. Freedom is not doing whatever we want. True freedom is found in Him.</p>
 
 <p>Proverbs 14:12 reminds us that what seems right can lead to destruction.</p>
+
+</div>
+
+<p class="toggle" onclick="toggle('p1', this)">(Continue)</p>
+
+<div class="full-content" style="display:none">
 
 <p>Romans 3:4 declares that God remains true regardless of human opinion.</p>
 
@@ -263,16 +265,16 @@ www.bapbi.net
 </footer>
 
 <script>
-function toggle(id, btn) {
+function toggle(id, el) {
   const post = document.getElementById(id);
   const full = post.nextElementSibling.nextElementSibling;
 
   if (full.style.display === "none") {
     full.style.display = "block";
-    btn.innerText = "Show Less";
+    el.innerText = "(Hide)";
   } else {
     full.style.display = "none";
-    btn.innerText = "Read More";
+    el.innerText = "(Continue)";
   }
 }
 </script>
