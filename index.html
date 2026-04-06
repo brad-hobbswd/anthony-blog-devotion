@@ -6,7 +6,7 @@
 <title>Ministry Blog</title>
 
 <!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -26,20 +26,17 @@ nav {
   background: rgba(0,0,0,0.4);
 }
 
-/* LOGO ICON */
+/* LOGO */
 .logo-icon {
   width: 30px;
-  height: 30px;
 }
 
-/* LOGO TEXT */
 .logo {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .name {
   font-size: 30px;
-  font-weight: 600;
   color: #c084fc;
   text-shadow: 0 0 10px rgba(192,132,252,0.6);
 }
@@ -60,11 +57,6 @@ nav {
   font-size: 42px;
 }
 
-.hero p {
-  font-size: 18px;
-  opacity: 0.8;
-}
-
 /* LAYOUT */
 .container {
   display: flex;
@@ -75,15 +67,10 @@ nav {
   padding: 20px;
 }
 
-.posts {
-  flex: 2;
-}
+.posts { flex: 2; }
+.sidebar { flex: 1; }
 
-.sidebar {
-  flex: 1;
-}
-
-/* POSTS + CARDS */
+/* CARDS */
 .post, .card {
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(10px);
@@ -98,63 +85,52 @@ nav {
   transform: translateY(-5px);
 }
 
-/* NEWEST */
 .post.newest {
   border: 2px solid #c084fc;
-  box-shadow: 0 0 15px rgba(192,132,252,0.3);
 }
 
 /* TEXT */
 .post h3 {
   font-size: 22px;
-  margin-top: 0;
 }
 
 .post p {
-  margin-bottom: 14px;
-  line-height: 1.8;
-  font-size: 15px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.9;
 }
 
-.date {
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-strong {
+/* PRAYER */
+.prayer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-top: 20px;
   color: #c084fc;
+}
+
+.prayer-box {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-left: 3px solid #c084fc;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
 /* BUTTON */
 .button {
-  display: inline-block;
-  margin-top: 10px;
   padding: 10px 18px;
   background: linear-gradient(to right, #9333ea, #7c3aed);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 500;
 }
 
-/* IMAGE */
-.profile img {
-  width: 130px;
-  border-radius: 100%;
-}
-
-/* VIDEO */
+/* MEDIA */
 iframe {
   width: 100%;
   height: 200px;
   border-radius: 10px;
-}
-
-/* LINKS */
-a {
-  color: #c084fc;
-  text-decoration: none;
 }
 
 /* FOOTER */
@@ -163,15 +139,6 @@ footer {
   padding: 25px;
   font-size: 12px;
   opacity: 0.7;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  margin-top: 40px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
 }
 </style>
 
@@ -181,7 +148,6 @@ footer {
 
 <nav>
   <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" class="logo-icon">
-
   <h1 class="logo">
     <span class="name">Anthony’s</span>
     <span class="rest">Home Page in Devotion & Ministry</span>
@@ -190,51 +156,23 @@ footer {
 
 <div class="hero">
   <h2>Scripture • Devotion • Worship</h2>
-  <p>Lifting the name of Jesus</p>
 </div>
 
 <div class="container">
 
-  <div class="posts">
-    <h2>Latest Devotions</h2>
-    <div id="posts"></div>
+<div class="posts">
+  <h2>Latest Devotions</h2>
+  <div id="posts"></div>
+</div>
+
+<div class="sidebar">
+
+  <div class="card">
+    <h3>Worship</h3>
+    <iframe src="https://www.youtube.com/embed/REzub8autiY"></iframe>
   </div>
 
-  <div class="sidebar">
-
-    <div class="card profile">
-      <h3>About Me</h3>
-      <p>Sharing Scripture, devotion, and worship centered on Jesus.</p>
-      <img src="0f37fee160b59ac8c6d0058bb3746ac1.jpeg">
-      <br>
-      <a class="button" href="https://www.pentecostalsofwindsor.faith/" target="_blank">
-        Visit My Church
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Scripture of the Day</h3>
-      <p><strong>Acts 2:38</strong></p>
-    </div>
-
-    <div class="card">
-      <h3>Worship</h3>
-      <p style="font-size:13px; opacity:0.7;">Now Playing</p>
-      <iframe src="https://www.youtube.com/embed/REzub8autiY" allowfullscreen></iframe>
-    </div>
-
-    <div class="card">
-      <h3>Ministry Connections</h3>
-
-      <p><strong>Bethesda Tabernacle</strong><br>
-      <a href="https://www.mercyforyou.org" target="_blank">Visit Site</a></p>
-
-      <p><strong>BAPBI</strong><br>
-      <a href="https://www.bapbi.net" target="_blank">Visit Site</a></p>
-
-    </div>
-
-  </div>
+</div>
 
 </div>
 
@@ -242,72 +180,58 @@ footer {
 async function loadPosts() {
   const container = document.getElementById("posts");
 
-  try {
-    const res = await fetch("https://api.github.com/repos/brad-hobbswd/anthony-blog-devotion/contents/_posts");
-    const files = await res.json();
+  const res = await fetch("https://api.github.com/repos/brad-hobbswd/anthony-blog-devotion/contents/_posts");
+  const files = await res.json();
 
-    const posts = [];
+  for (const file of files) {
+    if (!file.name.endsWith(".md")) continue;
 
-    for (const file of files) {
-      if (file.name.endsWith(".md")) {
-        const raw = await fetch(file.download_url);
-        const text = await raw.text();
+    const raw = await fetch(file.download_url);
+    const text = await raw.text();
 
-        const parts = text.split("---");
-        const frontmatter = parts[1];
-        const body = parts[2];
+    const parts = text.split("---");
+    const front = parts[1];
+    const body = parts[2];
 
-        const data = {};
-        frontmatter.split("\n").forEach(line => {
-          const [key, ...rest] = line.split(":");
-          if (key && rest.length) {
-            data[key.trim()] = rest.join(":").trim();
-          }
-        });
+    const title = (front.match(/title:\s*(.+)/) || [])[1] || "No Title";
 
-        const title = data.title || "No Title";
-        const date = data.date || "";
+    const paragraphs = body.trim().split(/\n\s*\n/);
 
-        const paragraphs = body.trim().split(/\n\s*\n/);
-
-        const preview = paragraphs.slice(0, 2).map(p => `<p>${p}</p>`).join("");
-        const full = paragraphs.map(p => `<p>${p}</p>`).join("");
-
-        posts.push({ title, date, preview, full });
+    const formatted = paragraphs.map(p => {
+      if (p.trim().toLowerCase() === "prayer") {
+        return `<div class="prayer-title">Prayer</div>`;
       }
-    }
+      if (p.toLowerCase().startsWith("lord")) {
+        return `<div class="prayer-box"><p>${p}</p></div>`;
+      }
+      return `<p>${p}</p>`;
+    }).join("");
 
-    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const preview = paragraphs.slice(0,2).map(p => `<p>${p}</p>`).join("");
 
-    posts.forEach((post, index) => {
-      const div = document.createElement("div");
-      div.className = "post" + (index === 0 ? " newest" : "");
+    const div = document.createElement("div");
+    div.className = "post";
 
-      const id = "post-" + index;
+    const id = "post-" + Math.random();
 
-      div.innerHTML = `
-        <h3>${post.title}</h3>
-        <p class="date">${post.date}</p>
-        <div id="${id}">${post.preview}</div>
-        <button class="button" onclick="togglePost('${id}', this)">Read More</button>
-      `;
+    div.innerHTML = `
+      <h3>${title}</h3>
+      <div id="${id}">${preview}</div>
+      <button class="button" onclick="toggle('${id}', this)">Read More</button>
+    `;
 
-      div.dataset.full = post.full;
-      div.dataset.preview = post.preview;
+    div.dataset.full = formatted;
+    div.dataset.preview = preview;
 
-      container.appendChild(div);
-    });
-
-  } catch {
-    container.innerHTML = "<p>Posts could not load.</p>";
+    container.appendChild(div);
   }
 }
 
-function togglePost(id, btn) {
+function toggle(id, btn){
   const el = document.getElementById(id);
   const parent = btn.parentElement;
 
-  if (btn.innerText === "Read More") {
+  if(btn.innerText === "Read More"){
     el.innerHTML = parent.dataset.full;
     btn.innerText = "Show Less";
   } else {
@@ -320,7 +244,7 @@ loadPosts();
 </script>
 
 <footer>
-  © 2026 Brad Hobbs Web Design. All rights reserved.
+© 2026 Brad Hobbs Web Design
 </footer>
 
 </body>
