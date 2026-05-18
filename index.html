@@ -9,165 +9,479 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #6d28d9);
-  color: white;
+
+body{
+margin:0;
+font-family:Inter,sans-serif;
+background:
+linear-gradient(
+to bottom,
+#0f0c29,
+#302b63,
+#6d28d9
+);
+color:white;
 }
+
 
 /* NAV */
-nav {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0,0,0,0.4);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+
+nav{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,.4);
+position:sticky;
+top:0;
+z-index:1000;
+backdrop-filter:blur(12px);
+box-shadow:
+0 5px 20px rgba(
+0,
+0,
+0,
+.15
+);
 }
 
-nav h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 26px;
+nav h1{
+font-family:
+"Playfair Display",
+serif;
+
+font-size:26px;
+
+margin:0;
 }
 
-nav span {
-  color: #c084fc;
-  text-shadow: 0 0 10px rgba(192,132,252,0.8);
+nav span{
+
+color:#c084fc;
+
+text-shadow:
+0 0 10px rgba(
+192,
+132,
+252,
+.8
+);
+
 }
+
 
 /* HERO */
-.hero {
-  text-align: center;
-  padding: 60px 20px 40px;
+
+.hero{
+
+text-align:center;
+
+padding:
+60px
+20px
+40px;
 }
 
-.hero h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-  margin-bottom: 10px;
+.hero h2{
+
+font-family:
+"Playfair Display",
+serif;
+
+font-size:30px;
+
+margin-bottom:12px;
 }
 
-.hero p {
-  font-size: 14px;
-  opacity: 0.75;
+.hero p{
+
+font-size:14px;
+
+opacity:.75;
+
+max-width:650px;
+
+margin:auto;
 }
+
 
 /* LAYOUT */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: auto;
-  gap: 20px;
-  padding: 20px;
+
+.container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+max-width:1100px;
+
+margin:auto;
+
+gap:24px;
+
+padding:20px;
 }
 
-.posts { flex: 2; }
-.sidebar { flex: 1; }
+.posts{
+flex:2;
+}
+
+.sidebar{
+flex:1;
+}
+
 
 /* CARDS */
-.post, .card {
-  background: rgba(255,255,255,0.1);
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 0 20px rgba(192,132,252,0.15);
-  transition: all 0.25s ease;
+
+.post,
+.card{
+
+background:
+rgba(
+255,
+255,
+255,
+.10
+);
+
+padding:25px;
+
+border-radius:18px;
+
+margin-bottom:25px;
+
+backdrop-filter:
+blur(10px);
+
+box-shadow:
+0 0 20px rgba(
+192,
+132,
+252,
+.15
+);
+
+transition:
+all .3s ease;
 }
 
-.post:hover, .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+.post:hover,
+.card:hover{
+
+transform:
+translateY(-4px);
+
+box-shadow:
+0 15px 35px rgba(
+0,
+0,
+0,
+.25
+);
 }
 
-.post:first-child {
-  border: 2px solid #c084fc;
+.post:first-child{
+
+border:
+2px solid #c084fc;
 }
 
-.date {
-  font-size: 12px;
-  opacity: 0.7;
-  margin-bottom: 10px;
+
+/* POSTS */
+
+.date{
+
+font-size:12px;
+
+opacity:.7;
+
+margin-bottom:12px;
 }
 
-.post h3 {
-  font-family: "Playfair Display", serif;
+.post h3{
+
+font-family:
+"Playfair Display",
+serif;
+
+margin-top:0;
 }
 
-.post-content {
-  max-width: 700px;
+.post-content{
+
+max-width:700px;
 }
 
-.post-content p {
-  line-height: 1.7;
-  margin-bottom: 14px;
-  font-size: 15px;
+.post-content p{
+
+line-height:1.8;
+
+margin-bottom:14px;
+
+font-size:15px;
 }
 
-.post-content h4 {
-  font-family: "Playfair Display", serif;
-  margin-top: 25px;
-  color: #c084fc;
-  text-align: center;
+.post-content h4{
+
+font-family:
+"Playfair Display",
+serif;
+
+margin-top:25px;
+
+margin-bottom:15px;
+
+color:#c084fc;
+
+text-align:center;
 }
 
-.toggle {
-  margin-top: 10px;
-  font-size: 13px;
-  opacity: 0.7;
-  cursor: pointer;
+.toggle{
+
+margin-top:12px;
+
+font-size:13px;
+
+opacity:.7;
+
+cursor:pointer;
+
+transition:.3s;
 }
+
+.toggle:hover{
+
+opacity:1;
+
+color:#c084fc;
+}
+
 
 /* PROFILE */
-.profile img {
-  width: 130px;
-  border-radius: 100%;
-  margin-top: 10px;
-  border: 3px solid rgba(192,132,252,0.6);
-  box-shadow: 0 0 15px rgba(192,132,252,0.4);
+
+.profile{
+
+text-align:center;
 }
 
-/* MEDIA */
-iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.profile img{
+
+width:130px;
+
+border-radius:100%;
+
+margin-top:10px;
+
+border:
+3px solid rgba(
+192,
+132,
+252,
+.6
+);
+
+box-shadow:
+0 0 15px rgba(
+192,
+132,
+252,
+.4
+);
 }
 
-a {
-  color: #c084fc;
-  text-decoration: none;
+
+/* WORSHIP */
+
+iframe{
+
+width:100%;
+
+height:200px;
+
+border:none;
+
+border-radius:10px;
+
+margin-bottom:12px;
 }
+
+.card p[style]{
+
+margin-top:16px;
+
+margin-bottom:12px;
+}
+
+
+/* LINKS */
+
+a{
+
+color:#c084fc;
+
+text-decoration:none;
+
+transition:.3s;
+}
+
+a:hover{
+
+color:white;
+}
+
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 25px;
-  font-size: 12px;
-  opacity: 0.7;
+
+.siteFooter{
+
+margin-top:55px;
+
+padding:55px 20px;
+
+text-align:center;
+
+background:
+rgba(
+0,
+0,
+0,
+.35
+);
+
+backdrop-filter:
+blur(14px);
+
+border-top:
+1px solid rgba(
+255,
+255,
+255,
+.08
+);
 }
+
+.footerInner{
+
+max-width:900px;
+
+margin:auto;
+}
+
+.footerBrand{
+
+font-family:
+"Playfair Display",
+serif;
+
+font-size:28px;
+
+margin-bottom:12px;
+
+color:white;
+}
+
+.footerText{
+
+opacity:.75;
+
+line-height:1.7;
+
+max-width:650px;
+
+margin:
+auto auto 25px;
+}
+
+.footerLinks{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+margin-bottom:25px;
+}
+
+.footerLinks a{
+
+color:#c084fc;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
+}
+
+.footerLinks a:hover{
+
+color:white;
+
+text-shadow:
+0 0 10px rgba(
+192,
+132,
+252,
+.8
+);
+
+}
+
+.copyright,
+.credit{
+
+opacity:.65;
+
+font-size:12px;
+
+margin-top:10px;
+}
+
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
 
-  .posts, .sidebar {
-    flex: 100%;
-  }
+@media (max-width:768px){
 
-  .hero {
-    padding: 30px 15px;
-  }
+.container{
 
-  nav h1 {
-    font-size: 20px;
-  }
+flex-direction:column;
 }
+
+.posts,
+.sidebar{
+
+flex:100%;
+}
+
+.hero{
+
+padding:
+30px
+15px;
+}
+
+.hero h2{
+
+font-size:24px;
+}
+
+nav h1{
+
+font-size:20px;
+}
+
+.footerLinks{
+
+flex-direction:column;
+
+gap:10px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
@@ -184,6 +498,137 @@ footer {
 <div class="container">
 
 <div class="posts">
+
+  <div class="post">
+
+<h3>
+Preparing the Atmosphere for Revival
+</h3>
+
+<p class="date">
+May 18, 2026 • Devotion
+</p>
+
+<div class="post-content" id="p7">
+
+<p>
+Revival does not begin with crowds, noise, or excitement. Revival begins in hearts that have been prepared for the presence of God. Before the fire fell in the upper room, before the gospel spread through the nations, Jesus first taught His followers how to prepare the atmosphere spiritually.
+</p>
+
+<p>
+In John 14, Jesus spoke peace into troubled hearts:
+</p>
+
+<p>
+“Let not your heart be troubled: ye believe in God, believe also in me.”<br>
+John 14:1
+</p>
+
+<p>
+Fear, anxiety, and unbelief create resistance to what God desires to do. Jesus understood that if the disciples were going to receive the promise of the Father, their hearts first needed to be anchored in faith and peace. Revival cannot flourish in an atmosphere ruled by panic and distraction. Faith prepares the atmosphere for the move of God.
+</p>
+
+</div>
+
+<p class="toggle" onclick="toggle('p7', this)">
+(Continue)
+</p>
+
+<div class="full-content" style="display:none">
+
+<p>
+Jesus then promised another Comforter, the Holy Ghost:
+</p>
+
+<p>
+“He dwelleth with you, and shall be in you.”<br>
+John 14:17
+</p>
+
+<p>
+The atmosphere for revival is prepared when people become aware of God’s presence and make room for the Holy Spirit to dwell freely among them. Revival is not manufactured by human ability; it is hosted by yielded hearts.
+</p>
+
+<p>
+This truth is beautifully illustrated in the house of Martha and Mary. Martha was consumed with activity, but Mary positioned herself at Jesus’ feet.
+</p>
+
+<p>
+“Mary hath chosen that good part…”<br>
+Luke 10:42
+</p>
+
+<p>
+Martha had preparation in the natural sense, but Mary understood spiritual preparation. She created an atmosphere where the voice of Jesus became the center of attention. Revival often tarries where distraction dominates, but it flows where hunger for God becomes greater than the demands of life.
+</p>
+
+<p>
+Many want revival power, but few want revival posture.
+</p>
+
+<h4>
+Mary teaches us that preparation for revival requires:
+</h4>
+
+<p>
+Stillness before God<br>
+Attentiveness to His voice<br>
+Surrender of distractions<br>
+Desire for His presence above all else
+</p>
+
+<p>
+Then in Luke 24:49, Jesus gave one final instruction before Pentecost:
+</p>
+
+<p>
+“Tarry ye in the city of Jerusalem, until ye be endued with power from on high.”
+</p>
+
+<p>
+The disciples were not told to organize, strategize, or promote. They were told to wait. Waiting together in prayer and expectation prepared the atmosphere for the outpouring of the Holy Ghost.
+</p>
+
+<p>
+Before Pentecost came suddenly, there was a season of tarrying faithfully.
+</p>
+
+<h4>
+The atmosphere for revival is prepared when believers:
+</h4>
+
+<p>
+Pray persistently<br>
+Gather in unity<br>
+Wait with expectation<br>
+Remove distractions<br>
+Trust the promises of God<br>
+Welcome the work of the Holy Spirit
+</p>
+
+<p>
+Revival is not merely an event; it is the response of God to hearts that are ready for Him.
+</p>
+
+<p>
+Today, God still seeks people who will prepare room for His presence. Hearts free from fear. Minds attentive to His Word. Lives surrendered in obedience. Churches committed to prayer. Believers willing to tarry until heaven moves.
+</p>
+
+<p>
+If we desire revival in our homes, churches, and communities, the preparation must begin within us. The atmosphere changes when Jesus becomes the center again.
+</p>
+
+<h4>
+Prayer
+</h4>
+
+<p>
+Heavenly Father, prepare my heart for revival. Remove fear, distraction, and spiritual complacency from my life. Teach me to sit at Your feet like Mary and to wait upon You with expectation. Let my heart become a dwelling place for Your Spirit. Fill my home, my church, and my community with an atmosphere that welcomes Your presence and power. Revive me first, Lord, and let Your Spirit move freely in every area of my life. In Jesus’ name, Amen.
+</p>
+
+</div>
+
+</div>
   
   <div class="post">
   <h3>Unchanging God, Unshakable Hope</h3>
@@ -458,25 +903,82 @@ And whatever you do, do it heartily, as to the Lord and not to men.”</p>
 </div>
 
 <div class="card">
-<h3>Worship</h3>
 
-<p style="font-size:12px; opacity:0.7;">Featured Worship</p>
-<iframe src="https://www.youtube.com/embed/NQCMnGEGlx4"></iframe>
+<h3>
 
-<p style="font-size:12px; opacity:0.7;">Now Playing</p>
-<iframe src="https://www.youtube.com/embed/TPoQw8xx3EU"></iframe>
+Worship
 
-<p style="font-size:12px; opacity:0.7;">Recent Worship</p>
-<iframe src="https://www.youtube.com/embed/GtsZ1sEbgCs"></iframe>
+</h3>
 
-<p style="font-size:12px; opacity:0.7;">Previous Worship</p>
-<iframe src="https://www.youtube.com/embed/OtJt57tBQoo"></iframe>
 
-<p style="font-size:12px; opacity:0.7;">Earlier Worship</p>
-<iframe src="https://www.youtube.com/embed/REzub8autiY"></iframe>
+<p style="font-size:12px; opacity:0.7;">
+
+Featured Worship
+
+</p>
+
+<iframe
+src="https://www.youtube.com/embed/IjETAcm4cpM"
+allowfullscreen>
+</iframe>
+
+
+<p style="font-size:12px; opacity:0.7;">
+
+Now Playing
+
+</p>
+
+<iframe
+src="https://www.youtube.com/embed/NQCMnGEGlx4"
+  allowfullscreen>
+</iframe>
+
+
+<p style="font-size:12px; opacity:0.7;">
+
+Recent Worship
+
+</p>
+
+<iframe
+src="https://www.youtube.com/embed/TPoQw8xx3EU" allowfullscreen>
+</iframe>
+
+
+<p style="font-size:12px; opacity:0.7;">
+
+Previous Worship
+
+</p>
+
+<iframe
+src="https://www.youtube.com/embed/GtsZ1sEbgCs" allowfullscreen>
+</iframe>
+
+
+<p style="font-size:12px; opacity:0.7;">
+
+Earlier Worship
+
+</p>
+
+<iframe
+src="https://www.youtube.com/embed/OtJt57tBQoo" allowfullscreen>
+</iframe>
+
+
+<p style="font-size:12px; opacity:0.7;">
+
+Archive Worship
+
+</p>
+
+<iframe
+src="https://www.youtube.com/embed/REzub8autiY" allowfullscreen>
+</iframe>
 
 </div>
-
 <div class="card">
 <h3>Ministry Connections</h3>
 
@@ -495,23 +997,120 @@ And whatever you do, do it heartily, as to the Lord and not to men.”</p>
 
 </div>
 
-<footer>
-© 2026 Brad Hobbs Web Design
+<footer class="siteFooter">
+
+<div class="footerInner">
+
+<div class="footerBrand">
+
+Anthony's Devotion & Ministry
+
+</div>
+
+
+<p class="footerText">
+
+Scripture, worship, encouragement, and devotion centered on Jesus.
+
+</p>
+
+
+<div class="footerLinks">
+
+<a
+href="https://brad-hobbswd.github.io/anthony-blog-devotion/">
+
+Home
+
+</a>
+
+
+<a
+href="https://brad-hobbswd.github.io/brad-hobbswd/">
+
+Brad Hobbs Web Design
+
+</a>
+
+
+<a
+href="https://www.facebook.com/profile.php?id=61580865290507">
+
+Follow on Facebook
+
+</a>
+
+</div>
+
+
+<p class="copyright">
+
+© <span id="year"></span>
+
+Anthony's Devotion & Ministry
+
+</p>
+
+
+<p class="credit">
+
+Designed by Brad Hobbs Web Design
+
+</p>
+
+</div>
+
 </footer>
 
 <script>
-function toggle(id, el) {
-  const post = document.getElementById(id);
-  const full = post.nextElementSibling.nextElementSibling;
 
-  if (full.style.display === "none") {
-    full.style.display = "block";
-    el.innerText = "(Hide)";
-  } else {
-    full.style.display = "none";
-    el.innerText = "(Continue)";
-  }
+document
+.getElementById(
+"year"
+)
+
+.textContent=
+
+new Date()
+
+.getFullYear();
+
+
+
+function toggle(id, el){
+
+const post=
+document.getElementById(id);
+
+const full=
+post
+.nextElementSibling
+.nextElementSibling;
+
+
+if(
+full.style.display==="none"
+||
+full.style.display===""
+
+){
+
+full.style.display="block";
+
+el.innerText="(Hide)";
+
 }
+
+else{
+
+full.style.display="none";
+
+el.innerText="(Continue)";
+
+}
+
+}
+
 </script>
 
 </body>
