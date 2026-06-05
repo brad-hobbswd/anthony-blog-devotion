@@ -105,16 +105,26 @@ margin:auto;
 
 /* LAYOUT */
 
+/* LAYOUT */
+
 .container{
-display:block;
-max-width:1100px;
+display:grid;
+grid-template-columns:2.2fr 1fr;
+gap:30px;
+max-width:1400px;
 margin:auto;
 padding:20px;
+align-items:start;
 }
 
-.posts,
+.posts{
+min-width:0;
+}
+
 .sidebar{
-width:100%;
+display:flex;
+flex-direction:column;
+gap:25px;
 }
 
 
@@ -252,28 +262,14 @@ text-align:center;
 }
 
 .profile img{
-
-width:130px;
-
-border-radius:100%;
-
-margin-top:10px;
-
-border:
-3px solid rgba(
-192,
-132,
-252,
-.6
-);
-
-box-shadow:
-0 0 15px rgba(
-192,
-132,
-252,
-.4
-);
+width:150px;
+height:150px;
+object-fit:cover;
+display:block;
+margin:15px auto;
+border-radius:50%;
+border:3px solid rgba(192,132,252,.6);
+box-shadow:0 0 20px rgba(192,132,252,.4);
 }
 
 
@@ -537,19 +533,37 @@ minmax(300px,1fr)
 gap:20px;
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-.container{
-
-flex-direction:column;
+.profile p{
+line-height:1.8;
+font-size:14px;
+text-align:left;
 }
 
-.posts,
-.sidebar{
+/* MOBILE */
 
-flex:100%;
+@media (max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.hero{
+padding:30px 15px;
+}
+
+.hero h2{
+font-size:24px;
+}
+
+nav h1{
+font-size:20px;
+}
+
+.footerLinks{
+flex-direction:column;
+gap:10px;
+}
+
 }
 
 .hero{
@@ -599,7 +613,11 @@ gap:10px;
 
 <div class="container">
 
+<div class="posts">
+
 <div id="devotions-container"></div>
+
+</div>
 
 <div class="sidebar">
 
@@ -609,13 +627,7 @@ gap:10px;
 My name is Anthony Smith, and I am a person living with Cerebral Palsy. I am blessed to be a twin brother and to have a wonderful sister. Above all, I love the Lord Jesus with all my heart and enjoy singing His praises every day. I am passionate about sharing Scripture, encouraging others through devotion, and pointing people to the hope, peace, and love found in Jesus. My prayer is that every devotion, song, and message shared here will strengthen faith and bring glory to His name.
 </p>
 
-<style>
-.profile p{
-line-height:1.8;
-font-size:14px;
-text-align:left;
-}
-</style>
+
 
 <img src="8dc92527b2f627f116f39daf0d504d84.jpeg">
 </div>
