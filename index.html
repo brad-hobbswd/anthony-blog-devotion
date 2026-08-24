@@ -3,803 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Anthony's Devotion & Ministry. Scripture, devotion, worship, encouragement, and faith centered on Jesus.">
 <title>Anthony's Devotion & Ministry</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
-
-<style>
-
-body{
-margin:0;
-font-family:Inter,sans-serif;
-background:
-linear-gradient(
-to bottom,
-#0f0c29,
-#302b63,
-#6d28d9
-);
-color:white;
-}
-
-
-/* NAV */
-
-nav{
-text-align:center;
-padding:20px;
-background:rgba(0,0,0,.4);
-position:sticky;
-top:0;
-z-index:1000;
-backdrop-filter:blur(12px);
-box-shadow:
-0 5px 20px rgba(
-0,
-0,
-0,
-.15
-);
-}
-
-nav h1{
-font-family:
-"Playfair Display",
-serif;
-
-font-size:26px;
-
-margin:0;
-}
-
-nav span{
-
-color:#c084fc;
-
-text-shadow:
-0 0 10px rgba(
-192,
-132,
-252,
-.8
-);
-
-}
-
-
-/* HERO */
-
-.hero{
-
-text-align:center;
-
-padding:
-60px
-20px
-40px;
-}
-
-.hero h2{
-
-font-family:
-"Playfair Display",
-serif;
-
-font-size:30px;
-
-margin-bottom:12px;
-}
-
-.hero p{
-
-font-size:14px;
-
-opacity:.75;
-
-max-width:650px;
-
-margin:auto;
-}
-
-
-/* LAYOUT */
-
-/* LAYOUT */
-
-.container{
-display:grid;
-grid-template-columns:2.2fr 1fr;
-gap:30px;
-max-width:1400px;
-margin:auto;
-padding:20px;
-align-items:start;
-}
-
-.posts{
-min-width:0;
-}
-
-.sidebar{
-display:flex;
-flex-direction:column;
-gap:25px;
-}
-
-
-/* CARDS */
-
-.post,
-.card{
-
-background:
-rgba(
-255,
-255,
-255,
-.10
-);
-
-padding:25px;
-
-border-radius:18px;
-
-margin-bottom:25px;
-
-backdrop-filter:
-blur(10px);
-
-box-shadow:
-0 0 20px rgba(
-192,
-132,
-252,
-.15
-);
-
-transition:
-all .3s ease;
-}
-
-.post:hover,
-.card:hover{
-
-transform:
-translateY(-4px);
-
-box-shadow:
-0 15px 35px rgba(
-0,
-0,
-0,
-.25
-);
-}
-
-.post:first-child{
-
-border:
-2px solid #c084fc;
-}
-
-
-/* POSTS */
-
-.date{
-
-font-size:12px;
-
-opacity:.7;
-
-margin-bottom:12px;
-}
-
-.post h3{
-
-font-family:
-"Playfair Display",
-serif;
-
-margin-top:0;
-}
-
-.post-content{
-
-max-width:700px;
-}
-
-.post-content p{
-
-line-height:1.8;
-
-margin-bottom:14px;
-
-font-size:15px;
-}
-
-.post-content h4{
-
-font-family:
-"Playfair Display",
-serif;
-
-margin-top:25px;
-
-margin-bottom:15px;
-
-color:#c084fc;
-
-text-align:center;
-}
-
-.toggle{
-
-margin-top:12px;
-
-font-size:13px;
-
-opacity:.7;
-
-cursor:pointer;
-
-transition:.3s;
-}
-
-.toggle:hover{
-
-opacity:1;
-
-color:#c084fc;
-}
-
-
-/* PROFILE */
-
-.profile{
-
-text-align:center;
-}
-
-.profile img{
-width:150px;
-height:150px;
-object-fit:cover;
-display:block;
-margin:15px auto;
-border-radius:50%;
-border:3px solid rgba(192,132,252,.6);
-box-shadow:0 0 20px rgba(192,132,252,.4);
-}
-
-
-/* WORSHIP */
-
-iframe{
-
-width:100%;
-
-height:200px;
-
-border:none;
-
-border-radius:10px;
-
-margin-bottom:12px;
-}
-
-.card p[style]{
-
-margin-top:16px;
-
-margin-bottom:12px;
-}
-
-
-/* LINKS */
-
-a{
-
-color:#c084fc;
-
-text-decoration:none;
-
-transition:.3s;
-}
-
-a:hover{
-
-color:white;
-}
-
-
-/* FOOTER */
-
-.siteFooter{
-
-margin-top:55px;
-
-padding:55px 20px;
-
-text-align:center;
-
-background:
-rgba(
-0,
-0,
-0,
-.35
-);
-
-backdrop-filter:
-blur(14px);
-
-border-top:
-1px solid rgba(
-255,
-255,
-255,
-.08
-);
-}
-
-.footerInner{
-
-max-width:900px;
-
-margin:auto;
-}
-
-.footerBrand{
-
-font-family:
-"Playfair Display",
-serif;
-
-font-size:28px;
-
-margin-bottom:12px;
-
-color:white;
-}
-
-.footerText{
-
-opacity:.75;
-
-line-height:1.7;
-
-max-width:650px;
-
-margin:
-auto auto 25px;
-}
-
-.footerLinks{
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-flex-wrap:wrap;
-
-margin-bottom:25px;
-}
-
-.footerLinks a{
-
-color:#c084fc;
-
-text-decoration:none;
-
-font-weight:700;
-
-transition:.3s;
-}
-
-.footerLinks a:hover{
-
-color:white;
-
-text-shadow:
-0 0 10px rgba(
-192,
-132,
-252,
-.8
-);
-
-}
-
-.copyright,
-.credit{
-
-opacity:.65;
-
-font-size:12px;
-
-margin-top:10px;
-}
-
-#progressBar{
-position:fixed;
-top:0;
-left:0;
-width:0%;
-height:4px;
-background:linear-gradient(
-90deg,
-#c084fc,
-#ffffff
-);
-z-index:9999;
-box-shadow:0 0 15px rgba(192,132,252,.8);
-}
-
-.scriptureCard{
-
-max-width:900px;
-
-margin:0 auto 30px;
-
-padding:25px;
-
-background:
-rgba(255,255,255,.12);
-
-backdrop-filter:blur(15px);
-
-border-radius:20px;
-
-text-align:center;
-
-box-shadow:
-0 0 25px rgba(
-192,
-132,
-252,
-.25
-);
-
-}
-
-.particles{
-position:fixed;
-inset:0;
-pointer-events:none;
-overflow:hidden;
-z-index:-1;
-}
-
-.particles::before,
-.particles::after{
-
-content:"";
-
-position:absolute;
-
-width:300px;
-
-height:300px;
-
-border-radius:50%;
-
-background:
-rgba(
-192,
-132,
-252,
-.08
-);
-
-animation:
-floatGlow 20s infinite linear;
-
-}
-
-.particles::after{
-
-right:0;
-
-animation-delay:-10s;
-
-}
-
-@keyframes floatGlow{
-
-0%{
-transform:
-translateY(100vh)
-translateX(0);
-}
-
-100%{
-transform:
-translateY(-100vh)
-translateX(150px);
-}
-
-}
-
-.worshipGrid{
-display:grid;
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(300px,1fr)
-);
-gap:20px;
-}
-
-.profile p{
-line-height:1.8;
-font-size:14px;
-text-align:left;
-}
-
-/* MOBILE */
-
-@media (max-width:900px){
-
-.container{
-grid-template-columns:1fr;
-}
-
-.hero{
-padding:30px 15px;
-}
-
-.hero h2{
-font-size:24px;
-}
-
-nav h1{
-font-size:20px;
-}
-
-.footerLinks{
-flex-direction:column;
-gap:10px;
-}
-
-}
-
-.hero{
-
-padding:
-30px
-15px;
-}
-
-.hero h2{
-
-font-size:24px;
-}
-
-nav h1{
-
-font-size:20px;
-}
-
-.footerLinks{
-
-flex-direction:column;
-
-gap:10px;
-}
-
-}
-
-</style>
-
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div id="progressBar"></div>
-  <div class="particles"></div>
-  
+
+<div id="progressBar"></div>
+<div class="particles" aria-hidden="true"></div>
 
 <nav>
-  <h1><span>Anthony's</span> Devotion & Ministry</h1>
+  <div class="navInner">
+    <div class="navBrand">
+      <div class="navMark" aria-hidden="true">✦</div>
+      <h1><span>Anthony's</span> Devotion & Ministry</h1>
+    </div>
+    <div class="navTag">Scripture • Worship • Encouragement</div>
+  </div>
 </nav>
 
-<div class="hero">
-  <h2>Scripture • Devotion • Worship</h2>
-  <p>Encouragement rooted in the Word of Jesus</p>
-</div>
+<header class="hero">
+  <div class="heroEyebrow">A place to pause and seek Jesus</div>
+  <h2>Faith for the journey.<br><span>Hope for today.</span></h2>
+  <p>Scripture, devotion, worship, and encouragement created to strengthen faith and point every heart back to Jesus.</p>
+  <div class="heroRule"></div>
+</header>
 
+<main class="container">
 
-<div class="container">
+  <section class="posts" aria-label="Recent devotions">
+    <div id="devotions-container"></div>
+  </section>
 
-<div class="posts">
+  <aside class="sidebar">
 
-<div id="devotions-container"></div>
+    <div class="card profile">
+      <span class="metaLabel">Meet Anthony</span>
+      <h3>About Me</h3>
+      <img src="8dc92527b2f627f116f39daf0d504d84.jpeg" alt="Anthony Smith">
+      <p>
+        My name is Anthony Smith, and I am a person living with Cerebral Palsy. I am blessed to be a twin brother and to have a wonderful sister. Above all, I love the Lord Jesus with all my heart and enjoy singing His praises every day. I am passionate about sharing Scripture, encouraging others through devotion, and pointing people to the hope, peace, and love found in Jesus. My prayer is that every devotion, song, and message shared here will strengthen faith and bring glory to His name.
+      </p>
+    </div>
 
-</div>
+    <div id="worship-container"></div>
 
-<div class="sidebar">
+    <div class="card connections">
+      <span class="metaLabel">Faith & Ministry</span>
+      <h3>Ministry Connections</h3>
 
-<div class="card profile">
-<h3>About Me</h3>
-<p>
-My name is Anthony Smith, and I am a person living with Cerebral Palsy. I am blessed to be a twin brother and to have a wonderful sister. Above all, I love the Lord Jesus with all my heart and enjoy singing His praises every day. I am passionate about sharing Scripture, encouraging others through devotion, and pointing people to the hope, peace, and love found in Jesus. My prayer is that every devotion, song, and message shared here will strengthen faith and bring glory to His name.
-</p>
+      <p><strong>Pentecostals of Windsor</strong><br>
+      <a href="https://www.pentecostalsofwindsor.faith/" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
 
+      <p><strong>Bethesda Tabernacle</strong><br>
+      <a href="https://www.mercyforyou.org" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
 
+      <p><strong>BAPBI</strong><br>
+      <a href="https://www.bapbi.net" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
+    </div>
 
-<img src="8dc92527b2f627f116f39daf0d504d84.jpeg">
-</div>
+  </aside>
 
-<div id="worship-container"></div>
-
-
-<div class="card">
-<h3>Ministry Connections</h3>
-
-<p><strong>Pentecostals of Windsor</strong><br>
-<a href="https://www.pentecostalsofwindsor.faith/" target="_blank">www.pentecostalsofwindsor.faith</a></p>
-
-<p><strong>Bethesda Tabernacle</strong><br>
-<a href="https://www.mercyforyou.org" target="_blank">www.mercyforyou.org</a></p>
-
-<p><strong>BAPBI</strong><br>
-<a href="https://www.bapbi.net" target="_blank">www.bapbi.net</a></p>
-
-</div>
-
-</div>
-
-</div>
+</main>
 
 <footer class="siteFooter">
+  <div class="footerInner">
+    <div class="footerBrand">Anthony's Devotion & Ministry</div>
+    <p class="footerText">Scripture, worship, encouragement, and devotion centered on Jesus.</p>
 
-<div class="footerInner">
+    <div class="footerLinks">
+      <a href="https://brad-hobbswd.github.io/anthony-blog-devotion/">Home</a>
+      <a href="https://brad-hobbswd.github.io/brad-hobbswd/">Brad Hobbs Web Design</a>
+      <a href="https://www.facebook.com/profile.php?id=61580865290507" target="_blank" rel="noopener noreferrer">Follow on Facebook</a>
+    </div>
 
-<div class="footerBrand">
-
-Anthony's Devotion & Ministry
-
-</div>
-
-
-<p class="footerText">
-
-Scripture, worship, encouragement, and devotion centered on Jesus.
-
-</p>
-
-
-<div class="footerLinks">
-
-<a
-href="https://brad-hobbswd.github.io/anthony-blog-devotion/">
-
-Home
-
-</a>
-
-
-<a
-href="https://brad-hobbswd.github.io/brad-hobbswd/">
-
-Brad Hobbs Web Design
-
-</a>
-
-
-<a
-href="https://www.facebook.com/profile.php?id=61580865290507">
-
-Follow on Facebook
-
-</a>
-
-</div>
-
-
-<p class="copyright">
-
-© <span id="year"></span>
-
-Anthony's Devotion & Ministry
-
-</p>
-
-
-<p class="credit">
-
-Designed by Brad Hobbs Web Design
-
-</p>
-
-</div>
-
+    <p class="copyright">© <span id="year"></span> Anthony's Devotion & Ministry</p>
+    <p class="credit">Designed by Brad Hobbs Web Design</p>
+  </div>
 </footer>
 
 <script>
+document.getElementById('year').textContent = new Date().getFullYear();
 
-document
-.getElementById(
-"year"
-)
-.textContent=
-new Date()
-.getFullYear();
-
-function toggle(id,el){
-
-const full=
-document.getElementById(id);
-
-if(
-full.style.display==="none"
-||
-full.style.display===""
-){
-
-full.style.display="block";
-
-el.innerText="(Hide)";
-}
-else{
-
-full.style.display="none";
-
-el.innerText="(Continue)";
+function toggle(id, el) {
+  const full = document.getElementById(id);
+  const hidden = full.style.display === 'none' || full.style.display === '';
+  full.style.display = hidden ? 'block' : 'none';
+  el.innerText = hidden ? '(Hide)' : '(Continue)';
 }
 
-}
-
-</script>
-
-<script>
-
-window.addEventListener("scroll",()=>{
-
-const winScroll=
-document.body.scrollTop ||
-document.documentElement.scrollTop;
-
-const height=
-document.documentElement.scrollHeight -
-document.documentElement.clientHeight;
-
-const scrolled=
-(winScroll / height) * 100;
-
-document.getElementById(
-"progressBar"
-).style.width=
-scrolled + "%";
-
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+  document.getElementById('progressBar').style.width = scrolled + '%';
 });
 
-</script>
-
-<script>
 fetch('devotions.html')
-  .then(response => response.text())
+  .then(response => {
+    if (!response.ok) throw new Error('Unable to load devotions.');
+    return response.text();
+  })
   .then(html => {
     document.getElementById('devotions-container').innerHTML = html;
   })
-  .catch(error => {
-    console.error('Error loading devotions:', error);
-  });
-</script>
+  .catch(error => console.error('Error loading devotions:', error));
 
-<script>
 fetch('worship.html')
-  .then(response => response.text())
+  .then(response => {
+    if (!response.ok) throw new Error('Unable to load worship.');
+    return response.text();
+  })
   .then(html => {
     document.getElementById('worship-container').innerHTML = html;
   })
-  .catch(error => {
-    console.error('Error loading worship:', error);
-  });
+  .catch(error => console.error('Error loading worship:', error));
 </script>
-
 
 </body>
 </html>
