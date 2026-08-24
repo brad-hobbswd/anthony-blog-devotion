@@ -7,9 +7,7 @@
 <title>Anthony's Devotion & Ministry</title>
 <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
 <div id="progressBar"></div>
 <div class="particles" aria-hidden="true"></div>
 
@@ -31,13 +29,12 @@
 </header>
 
 <main class="container">
-
   <section class="posts" aria-label="Recent devotions">
+    <h2 class="sectionTitle">Recent Devotions</h2>
     <div id="devotions-container"></div>
   </section>
 
   <aside class="sidebar">
-
     <div class="card profile">
       <span class="metaLabel">Meet Anthony</span>
       <h3>About Me</h3>
@@ -52,32 +49,22 @@
     <div class="card connections">
       <span class="metaLabel">Faith & Ministry</span>
       <h3>Ministry Connections</h3>
-
-      <p><strong>Pentecostals of Windsor</strong><br>
-      <a href="https://www.pentecostalsofwindsor.faith/" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
-
-      <p><strong>Bethesda Tabernacle</strong><br>
-      <a href="https://www.mercyforyou.org" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
-
-      <p><strong>BAPBI</strong><br>
-      <a href="https://www.bapbi.net" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
+      <p><strong>Pentecostals of Windsor</strong><br><a href="https://www.pentecostalsofwindsor.faith/" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
+      <p><strong>Bethesda Tabernacle</strong><br><a href="https://www.mercyforyou.org" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
+      <p><strong>BAPBI</strong><br><a href="https://www.bapbi.net" target="_blank" rel="noopener noreferrer">Visit Ministry Website</a></p>
     </div>
-
   </aside>
-
 </main>
 
 <footer class="siteFooter">
   <div class="footerInner">
     <div class="footerBrand">Anthony's Devotion & Ministry</div>
     <p class="footerText">Scripture, worship, encouragement, and devotion centered on Jesus.</p>
-
     <div class="footerLinks">
       <a href="https://brad-hobbswd.github.io/anthony-blog-devotion/">Home</a>
       <a href="https://brad-hobbswd.github.io/brad-hobbswd/">Brad Hobbs Web Design</a>
       <a href="https://www.facebook.com/profile.php?id=61580865290507" target="_blank" rel="noopener noreferrer">Follow on Facebook</a>
     </div>
-
     <p class="copyright">© <span id="year"></span> Anthony's Devotion & Ministry</p>
     <p class="credit">Designed by Brad Hobbs Web Design</p>
   </div>
@@ -88,9 +75,13 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 function toggle(id, el) {
   const full = document.getElementById(id);
-  const hidden = full.style.display === 'none' || full.style.display === '';
-  full.style.display = hidden ? 'block' : 'none';
-  el.innerText = hidden ? '(Hide)' : '(Continue)';
+  if (full.style.display === 'none' || full.style.display === '') {
+    full.style.display = 'block';
+    el.innerText = '(Hide)';
+  } else {
+    full.style.display = 'none';
+    el.innerText = '(Continue)';
+  }
 }
 
 window.addEventListener('scroll', () => {
@@ -101,25 +92,14 @@ window.addEventListener('scroll', () => {
 });
 
 fetch('devotions.html')
-  .then(response => {
-    if (!response.ok) throw new Error('Unable to load devotions.');
-    return response.text();
-  })
-  .then(html => {
-    document.getElementById('devotions-container').innerHTML = html;
-  })
+  .then(response => response.text())
+  .then(html => { document.getElementById('devotions-container').innerHTML = html; })
   .catch(error => console.error('Error loading devotions:', error));
 
 fetch('worship.html')
-  .then(response => {
-    if (!response.ok) throw new Error('Unable to load worship.');
-    return response.text();
-  })
-  .then(html => {
-    document.getElementById('worship-container').innerHTML = html;
-  })
+  .then(response => response.text())
+  .then(html => { document.getElementById('worship-container').innerHTML = html; })
   .catch(error => console.error('Error loading worship:', error));
 </script>
-
 </body>
 </html>
