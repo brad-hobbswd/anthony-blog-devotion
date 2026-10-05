@@ -341,21 +341,7 @@ nav h1 span {
         calc(100% - 40px)
     );
 
-    min-height: 420px;
-
     margin: 38px auto 72px;
-
-    padding: 92px 42px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
 
     overflow: hidden;
 
@@ -364,22 +350,22 @@ nav h1 span {
 
     border-radius: 30px;
 
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(201, 164, 92, .18),
-            transparent 38%
-        ),
-        linear-gradient(
-            135deg,
-            rgba(15, 13, 18, .97),
-            rgba(35, 28, 35, .92) 50%,
-            rgba(12, 11, 15, .98)
-        );
+    background: var(--ink);
 
     box-shadow:
         0 28px 80px rgba(0, 0, 0, .38),
         inset 0 0 80px rgba(201, 164, 92, .035);
+}
+
+.heroBannerImage {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 29px;
+
+    object-fit: cover;
 }
 
 
@@ -400,6 +386,8 @@ nav h1 span {
     border-radius: 22px;
 
     pointer-events: none;
+
+    z-index: 2;
 }
 
 
@@ -424,6 +412,8 @@ nav h1 span {
     font-size: 18px;
 
     pointer-events: none;
+
+    z-index: 3;
 }
 
 
